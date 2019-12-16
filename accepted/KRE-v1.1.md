@@ -43,10 +43,11 @@ If (s_1 + s_2  > 0.90) or (s_1 > 0.5):
     Else:
         s_1' = s_1
     If s_1' + s_2  > 0.90 then:
-        s_2 = s_2 / (s_1+s_2) * 0.9
-
-    s_1’ = minimum(s_1 / (s_1+s_2) * 0.9, s_1')
-    If s_1’ == s_1 / (s_1 + s_2) * 0.9:
+        s_2' = s_2 / (s_1+s_2) * 0.9
+    Else:
+    	s_2' = s_2
+    s_1’ = minimum(s_1' / (s_1'+s_2) * 0.9, s_1')
+    If s_2’ != s_2:
         For i = 3 to n:
             s_i’ = s_i / (sum from i = 3 to n of s_i) * 0.1
     Else:
